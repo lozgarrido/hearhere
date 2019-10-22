@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 def bbva_extract_locations(url):
     """
-    Scrap locations from any url of bbva.es offices directory
+    Scrap locations from any depth of bbva.es offices directory
 
     :param url: url to be scrapped
     :return: list of locations info as dictionaries
@@ -58,7 +58,7 @@ def bbva_extract_locations(url):
 
 def bbva_extract_offices(dataframe=True):
     """
-    Call 'bbva_extract_locations()' on all path depths of bbva.es offices directory
+    Call 'bbva_extract_locations()' recursively on all bbva.es offices directory
 
     :dataframe: config the output
     :return: DataFrame or list of dicts

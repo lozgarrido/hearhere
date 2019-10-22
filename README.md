@@ -1,4 +1,4 @@
-<p align="center"><img src="images/hearhere_logo.png"></p>
+<p align="center"><img src="images/hearhere_readme_logo.png"></p>
 
 ## About
 > Measure local reputation of global banking

@@ -13,23 +13,29 @@ Install the needed libraries for the project:
 pip3 install requests
 pip3 install pandas
 pip3 install bs4
+pip3 install googlemaps
 ```
 
 ### Data sources
 
 Locations extracted from:
 
-- [BBVA - Branch and Cashier Locator](https://www.bbva.es/general/localizador-oficinas-cajeros/index.jsp) - BBVA locations
+- [BBVA - Branch and Cashier Locator](https://www.bbva.es/general/localizador-oficinas-cajeros/index.jsp) - BBVA branches locations
+
+APIs:
+
+- [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/start) - Full addresses and coordinates
 
 ### Project structure
 
-#### Files:
+Files:
 
 - **main.ipynb**: Jupyter file with HH queries setup and visualization
 - **scrapers.py**: Download data from web
 - **config.py**: Project paths configuration
+- api_keys.py*
 
-#### Folders:
+Folders:
 
 - **data**: Data from scraping
 - **images**

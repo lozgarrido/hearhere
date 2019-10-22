@@ -19,17 +19,17 @@ pip3 install bs4
 
 Locations extracted from:
 
-- [BBVA - Branch and Cashier Locator](https://www.bbva.es/general/localizador-oficinas-cajeros/index.jsp) - Main data source
+- [BBVA - Branch and Cashier Locator](https://www.bbva.es/general/localizador-oficinas-cajeros/index.jsp) - BBVA locations
 
 ### Project structure
 
-##### Files:
+#### Files:
 
 - **main.ipynb**: Jupyter file with HH queries setup and visualization
 - **scrapers.py**: Download data from web
 - **config.py**: Project paths configuration
 
-##### Folders:
+#### Folders:
 
 - **data**: Data from scraping
 - **images**

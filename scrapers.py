@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 from bs4 import BeautifulSoup
 
 
@@ -55,11 +56,12 @@ def bbva_extract_locations(url):
     return locations
 
 
-def bbva_extract_offices():
+def bbva_extract_offices(dataframe=True):
     """
     Call 'bbva_extract_locations()' on all path depths of bbva.es offices directory
 
-    :return: List of offices information as dictionaries
+    :dataframe: config the output
+    :return: DataFrame or list of dicts
     """
 
     bbva_locations_directory = 'https://www.bbva.es/general/localizador-oficinas-cajeros/index.jsp'
@@ -90,5 +92,9 @@ def bbva_extract_offices():
             office['province_name'] = municipality['province_name']
             office['province_url'] = municipality['province_url']
             bbva_offices.append(office)
+
+    #Convert output to DataFrame
+    if dataframe == True:
+        bbva_offices = pd.DataFrame(bbva_offices)
 
     return bbva_offices

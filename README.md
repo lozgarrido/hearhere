@@ -39,3 +39,10 @@ Folders:
 
 - **data**: Data from scraping
 - **images**
+
+### Road map (next steps)
+
+- Improve the amount and quality of information retrieved with APIs, specially when Geocoding
+- Add new banks so that they can be compared with each other
+- Improve code efficiency
+- Expand the tool to other sectors

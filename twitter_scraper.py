@@ -24,6 +24,7 @@ def retrieve_tweets(keyword, latitude, longitude, radius='1.00km'):
     c = twint.Config()
     c.Search = keyword
     c.Pandas = True
+    c.Hide_output = True
 
     # Config dates range
     c.Since = a_year_ago

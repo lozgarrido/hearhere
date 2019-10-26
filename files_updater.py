@@ -82,8 +82,10 @@ def bbva_update_tweets(bbva_offices_path, bbva_tweets_path):
                 located_tweets['latitude'] = str(latitude)
                 located_tweets['longitude'] = str(longitude)
 
+
                 #Append tweets to 'bbva_tweets' dataset
                 bbva_tweets = bbva_tweets.append(located_tweets, ignore_index=True)
+                print(located_tweets)
 
         except: #If there aren't results
             pass

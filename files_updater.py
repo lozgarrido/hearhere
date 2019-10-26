@@ -32,15 +32,15 @@ def update_bbva_offices(bbva_offices_path):
     bbva_offices['geo_extraction'] = bbva_offices.apply(lambda row: extract_geocode(row[address_column]), axis=1)
 
     #Drop offices without a match
+    bbva_offices.replace('', np.nan, inplace=True)
     bbva_offices = bbva_offices.dropna()
 
-    #Format DataFrame with the new info
-    #requested_data = ['address', 'latitude', 'longitude', 'place_id']
-    #bbva_offices[requested_data] = pd.DataFrame(bbva_offices.geo_extraction.values.tolist())
-    #bbva_offices = bbva_offices.drop(columns=['geo_extraction'])
-
-    #Remove rows without information
-    bbva_offices = bbva_offices.dropna(how='any')
+    #Convert the new info into columns and remove the old ones
+    geo_extraction_items = ['address', 'latitude', 'longitude', 'place_id']
+    bbva_offices[geo_extraction_items] = pd.DataFrame(bbva_offices.geo_extraction.values.tolist(),
+                                                      index=bbva_offices.index)
+    bbva_offices = bbva_offices.drop(columns=['office_direction',
+                                              'geo_extraction'])
 
     #Export dataset and return it as DataFrame
     bbva_offices.to_csv(bbva_offices_path, index=False)

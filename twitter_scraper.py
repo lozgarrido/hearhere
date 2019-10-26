@@ -4,7 +4,7 @@ import nest_asyncio
 nest_asyncio.apply()  # Avoid ocassional RuntimeError in Jupyter Notebook
 
 
-def retrieve_tweets(keyword, latitude, longitude, radius='1.00km'):
+def retrieve_tweets(keyword, latitude, longitude, radius='5.00km'):
     """
     Returns tweets mentioning the keyword made in the last year around the given coordinates
 
@@ -18,7 +18,7 @@ def retrieve_tweets(keyword, latitude, longitude, radius='1.00km'):
     # Build parameters
     today = str(date.today())
     a_year_ago = str(date.today() - timedelta(365))
-    location_parameters = (latitude + ', ' + longitude + ', ' + radius)
+    location_parameters = (str(latitude) + ', ' + str(longitude) + ', ' + str(radius))
 
     # Config the query
     c = twint.Config()

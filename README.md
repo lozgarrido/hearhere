@@ -8,7 +8,7 @@
 
 ### Requeriments
 
-Install the needed libraries for the project:
+Install the needed libraries for the project. They are also included in *requirements.txt* file.
 
 ```
 pip3 install requests

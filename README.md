@@ -16,6 +16,7 @@ pip3 install pandas
 pip3 install numpy
 pip3 install bs4
 pip3 install googlemaps
+pip3 install twint
 ```
 
 ### First steps
@@ -30,7 +31,10 @@ A valid [Google Cloud Platform](https://cloud.google.com/maps-platform/) API key
 ### Code
 
 - **main.ipynb**: Jupyter file with HH queries setup and visualization
-- **scrapers.py**: Download data from web
+- **locations_scraper.py**: Downloads data from web
+- **twitter_scraper.py**: Downloads tweets
+- **files_updater.py**: Call the scrapers to update the databases
+- **google_maps_api.py**: Conects HH with Google Cloud
 - **config.py**: Project paths configuration
 - api_keys.py*
 

@@ -32,13 +32,15 @@ def extract_geocode(address):
 
     # Build the parameters
     address = 'BBVA ' + address
-    region = 'ES'
-
-    # Change any symbols substring with '+'
     address = re.sub(r'[^0-9a-zA-Z]+', '+', address)
 
+    parameters = {
+        'address': address,
+        'region': 'es'
+        }
+
     # Call the API and access to the first result if there are more
-    geocode_result = gmaps.geocode(address, region)
+    geocode_result = gmaps.geocode(parameters)
 
     try:
         geocode_result = geocode_result[0]

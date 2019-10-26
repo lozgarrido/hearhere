@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 
-def update_bbva_offices(bbva_offices_path):
+def bbva_update_offices(bbva_offices_path):
     """
     Scrap BBVA offices from the web, clean the data and exports it in the given .csv path
 
@@ -11,7 +11,7 @@ def update_bbva_offices(bbva_offices_path):
     :return: DataFrame with data
     """
 
-    from scrapers import bbva_extract_offices
+    from locations_scraper import bbva_extract_offices
 
     #Scrap the offices
     bbva_offices = bbva_extract_offices()

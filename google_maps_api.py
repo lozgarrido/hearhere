@@ -30,14 +30,15 @@ def extract_geocode(address):
     #Create the API generator
     gmaps = launch_google_maps_api()
 
-    # Build the url
+    # Build the parameters
     address = 'BBVA ' + address
+    region = 'ES'
 
     # Change any symbols substring with '+'
     address = re.sub(r'[^0-9a-zA-Z]+', '+', address)
 
     # Call the API and access to the first result if there are more
-    geocode_result = gmaps.geocode(address)
+    geocode_result = gmaps.geocode(address, region)
 
     try:
         geocode_result = geocode_result[0]

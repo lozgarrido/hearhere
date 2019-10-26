@@ -31,7 +31,7 @@ def update_bbva_offices(bbva_offices_path):
     address_column = 'office_direction'
     bbva_offices['geo_extraction'] = bbva_offices.apply(lambda row: extract_geocode(row[address_column]), axis=1)
 
-    #Drop offices without a match
+    #Drop offices without any match
     bbva_offices.replace('', np.nan, inplace=True)
     bbva_offices = bbva_offices.dropna()
 
@@ -41,6 +41,9 @@ def update_bbva_offices(bbva_offices_path):
                                                       index=bbva_offices.index)
     bbva_offices = bbva_offices.drop(columns=['office_direction',
                                               'geo_extraction'])
+
+    #Drop duplicates
+    bbva_offices.drop_duplicates(subset='place_id', inplace=True)
 
     #Export dataset and return it as DataFrame
     bbva_offices.to_csv(bbva_offices_path, index=False)
